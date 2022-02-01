@@ -1,4 +1,5 @@
-﻿using HotChocolate.Types;
+﻿using BaseClassRepro.Entities.Section;
+using HotChocolate.Types;
 
 namespace BaseClassRepro.Types.Input.Section
 {
@@ -19,4 +20,13 @@ namespace BaseClassRepro.Types.Input.Section
                 .Type<TextMediaSectionInputType>();
         }
     }
+
+#nullable enable
+    [OneOf]
+    public record SectionInput(MediaSection? Media, TextMediaSection? TextMediaSection)
+    {
+        // cant use ?? here
+        public ISection? Value => Media != null ? Media : TextMediaSection;
+    };
+#nullable disable
 }

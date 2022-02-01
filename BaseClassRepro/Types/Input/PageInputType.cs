@@ -1,6 +1,7 @@
 ﻿using BaseClassRepro.Entities;
 using BaseClassRepro.Types.Input.Section;
 using HotChocolate.Types;
+using System.Collections.Generic;
 
 namespace BaseClassRepro.Types.Input
 {
@@ -16,4 +17,6 @@ namespace BaseClassRepro.Types.Input
                 .Type<NonNullType<ListType<SectionInputType>>>();
         }
     }
+
+    public record PageInput(List<SectionInput> Sections);
 }
