@@ -8,6 +8,8 @@ namespace BaseClassRepro.Entities.Block
 {
     public class MediaBlock : Block
     {
+        public Guid Id { get; set; }
         public virtual Media.Media Content { get; set; }
+        public BlockType Type => BlockType.Media;
     }
 }

@@ -13,10 +13,10 @@ namespace BaseClassRepro.Types.Input
                 .Name(nameof(PageInputType));
 
             descriptor
-                .Field(f => f.Sections)
+                .Field(f => f.SectionsGQL)
                 .Type<NonNullType<ListType<SectionInputType>>>();
         }
     }
 
-    public record PageInput(List<SectionInput> Sections);
+    //public record PageInput(List<SectionInput> Sections);
 }

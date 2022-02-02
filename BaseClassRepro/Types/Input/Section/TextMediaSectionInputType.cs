@@ -17,7 +17,7 @@ namespace BaseClassRepro.Types.Input.Section
                 .Type<HeadlineInputType>();
 
             descriptor
-                .Field(f => f.Content)
+                .Field(f => f.ContentGQL)
                 .Type<ListType<BlockInputType>>();
         }
     }

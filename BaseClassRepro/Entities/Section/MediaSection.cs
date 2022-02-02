@@ -1,4 +1,5 @@
 ﻿using BaseClassRepro.Entities.Block;
+using System;
 
 namespace BaseClassRepro.Entities.Section
 {

@@ -8,6 +8,8 @@ namespace BaseClassRepro.Entities.Block
 {
     public class TextBlock : Block
     {
+        public Guid Id { get; set; }
         public virtual ICollection<TextBlockContent> Content { get; set; }
+        public BlockType Type => BlockType.Text;
     }
 }

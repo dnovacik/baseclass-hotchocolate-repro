@@ -3,9 +3,9 @@ using HotChocolate.Types;
 
 namespace BaseClassRepro.Types.Output.Section
 {
-    public class SectionType : InterfaceType<ISection>
+    public class SectionType : InterfaceType<Entities.Section.Section>
     {
-        protected override void Configure(IInterfaceTypeDescriptor<ISection> descriptor)
+        protected override void Configure(IInterfaceTypeDescriptor<Entities.Section.Section> descriptor)
         {
             descriptor
                 .Name(nameof(SectionType));

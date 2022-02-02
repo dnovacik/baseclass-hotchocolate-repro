@@ -28,6 +28,8 @@ namespace BaseClassRepro
                     options.EnableOneOf = true;
                     options.DefaultBindingBehavior = BindingBehavior.Explicit;
                 });
+
+            services.AddHttpResultSerializer<HttpSerializerExtension>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

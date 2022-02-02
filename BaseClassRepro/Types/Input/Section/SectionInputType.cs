@@ -3,30 +3,36 @@ using HotChocolate.Types;
 
 namespace BaseClassRepro.Types.Input.Section
 {
-    public class SectionInputType : InputObjectType
+    public class SectionInputType : InputObjectType<SectionInput>
     {
-        protected override void Configure(IInputObjectTypeDescriptor descriptor)
+        protected override void Configure(IInputObjectTypeDescriptor<SectionInput> descriptor)
         {
             descriptor
                 .Name(nameof(SectionInputType))
                 .OneOf();
 
             descriptor
-                .Field("media")
+                .Ignore(f => f.Value);
+
+            descriptor
+                .Field(f => f.Media)
                 .Type<MediaSectionInputType>();
 
             descriptor
-                .Field("textMedia")
+                .Field(f => f.TextMedia)
                 .Type<TextMediaSectionInputType>();
         }
     }
 
 #nullable enable
-    [OneOf]
-    public record SectionInput(MediaSection? Media, TextMediaSection? TextMediaSection)
+    public class SectionInput
     {
-        // cant use ?? here
-        public ISection? Value => Media != null ? Media : TextMediaSection;
-    };
+        public MediaSection? Media { get; set; }
+        public TextMediaSection? TextMedia { get; set; }
+
+        public Entities.Section.Section Value => Media != null ? Media : TextMedia;
+    }
 #nullable disable
+
+
 }
