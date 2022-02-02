@@ -22,9 +22,6 @@ namespace BaseClassRepro.Types.Output.Block
             descriptor
                 .Field(f => f.Content)
                 .Type<ListType<TextBlockContentType>>();
-
-            descriptor
-                .Implements<BlockType>();
         }
     }
 }

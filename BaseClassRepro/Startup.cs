@@ -21,8 +21,6 @@ namespace BaseClassRepro
                 .InitializeOnStartup()
                 .AddQueryType<QueryType>()
                 .AddMutationType<MutationType>()
-                .AddType<SectionType>()
-                .AddType<BlockType>()
                 .ModifyOptions(options =>
                 {
                     options.EnableOneOf = true;

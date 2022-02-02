@@ -23,9 +23,6 @@ namespace BaseClassRepro.Types.Output.Block
             descriptor
                 .Field(f => f.Content)
                 .Type<NonNullType<MediaType>>();
-
-            descriptor
-                .Implements<BlockType>();
         }
     }
 }

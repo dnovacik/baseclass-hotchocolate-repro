@@ -26,9 +26,6 @@ namespace BaseClassRepro.Types.Output.Block
             descriptor
                 .Field(f => f.Type)
                 .Type<BlockTypeEnumType>();
-
-            descriptor
-                .Implements<BlockType>();
         }
     }
 }
